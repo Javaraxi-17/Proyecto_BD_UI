@@ -1,7 +1,7 @@
 export const nav = [
   {
     text: "inicio",
-    path: "/",
+    path: "/pages",
   },
   {
     text: "acerca",
@@ -25,27 +25,27 @@ export const featured = [
   {
     cover: "../images/hero/h1.png",
     name: "Casa familiar",
-    total: "122 ",
+    
   },
   {
     cover: "../images/hero/h2.png",
     name: "Casa y vill",
-    total: "155 Propiedades",
+    
   },
   {
     cover: "../images/hero/h3.png",
     name: "Aparatmento",
-    total: "300 Propiedades",
+   
   },
   {
     cover: "../images/hero/h4.png",
     name: "Oficinas y estudios",
-    total: "80 Propiedades",
+    
   },
   {
     cover: "../images/hero/h6.png",
     name: "Condominio",
-    total: "80 Propiedades",
+    
   },
 ]
 export const list = [
