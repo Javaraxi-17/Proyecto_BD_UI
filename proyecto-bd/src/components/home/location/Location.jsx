@@ -1,26 +1,41 @@
-import React from "react"
-import Heading from "../../common/Heading"
-import { location } from "../../data/Data"
-import "./style.css"
+import React, { useEffect, useState } from "react";
+import Heading from "../../common/Heading";
+import "./style.css";
+
+const imageCovers = [
+  "../images/list/p-1.png",
+  "../images/list/p-2.png",
+  "../images/list/p-4.png",
+  "../images/list/p-5.png",
+  "../images/list/p-6.png",
+  "../images/list/p-7.png",
+];
 
 const Location = () => {
+  const [comentarios, setComentarios] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/comentario')
+      .then(response => response.json())
+      .then(data => setComentarios(data))
+      .catch(error => console.error('Error fetching comentarios:', error));
+  }, []);
+
   return (
     <>
       <section className='location padding'>
         <div className='container'>
-          <Heading title='Explora Por Ubicación'/>
+          <Heading title='Comentarios'/>
 
           <div className='content grid3 mtop'>
-            {location.map((item, index) => (
-              <div className='box' key={index}>
-                <img src={item.cover} alt='' />
+            {comentarios.map((item, index) => (
+              <div 
+                className='box' 
+                key={index}
+                style={{ backgroundImage: `url(${imageCovers[index % imageCovers.length]})` }}
+              >
                 <div className='overlay'>
-                  <h5>{item.name}</h5>
-                  <p>
-                    <label>{item.Villas}</label>
-                    <label>{item.Offices}</label>
-                    <label>{item.Apartments}</label>
-                  </p>
+                  <p>{item.Comentario}</p>
                 </div>
               </div>
             ))}
@@ -28,7 +43,7 @@ const Location = () => {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default Location
+export default Location;

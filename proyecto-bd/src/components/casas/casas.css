@@ -1,0 +1,47 @@
+.casas-container {
+    padding: 20px;
+  }
+  
+  .regresar-boton {
+    background-color: #27AE60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+
+  
+  .imagen-casa {
+    height: 685px;
+    width: 1325px;
+    display: block;
+    margin: 0 auto 20px auto;  /* Centra la imagen horizontalmente */
+  }
+  
+  .tabla-casas {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabla-casas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .tabla-casas .nombre {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+  
+  .tabla-casas td:nth-child(1) {
+    width: 20%;
+  }
+  
+  .tabla-casas td:nth-child(2) {
+    width: 80%;
+  }
+  

@@ -1,0 +1,32 @@
+.content {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.property-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.property-table th, .property-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.property-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.property-table a {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.property-table a:hover {
+  text-decoration: underline;
+}
