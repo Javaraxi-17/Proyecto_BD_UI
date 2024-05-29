@@ -5,18 +5,22 @@ import Login from "./components/login/Login";
 import Pages from "./components/pages/Pages";
 import Signin from "./components/signin/Signin";
 import Casas from "./components/casas/Casas";
+import { AuthProvider } from "./AuthContext";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route path="/pages" component={Pages} />
-        <Route path="/signin" component={Signin} />  // Añade la ruta para Signin
-        <Route path="/casas/:id" component={Casas}/>
-        <Redirect from="/" to="/login" />
-      </Switch> 
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route path="/signin" component={Signin} />
+          <PrivateRoute path="/pages" component={Pages} />
+          <PrivateRoute path="/casas/:id" component={Casas} />
+          <Redirect from="/" to="/login" />
+        </Switch>
+      </Router>
+    </AuthProvider>
   );
 }
 

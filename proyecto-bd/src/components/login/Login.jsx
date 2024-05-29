@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
+import { AuthContext } from "../../AuthContext";
 //css
 import '../login/login.css';
 
@@ -38,6 +39,7 @@ class Login extends React.Component {
 
             if (response.status === 200) {
                 this.setState({ message: 'Usuario ha sido encontrado con éxito' });
+                this.context.login(); // Set authentication state to true
                 this.props.history.push('/pages');
             } else {
                 this.setState({ message: 'Usuario o contraseña incorrecta' });
@@ -100,5 +102,7 @@ class Login extends React.Component {
         );
     }
 }
+
+Login.contextType = AuthContext;
 
 export default withRouter(Login);

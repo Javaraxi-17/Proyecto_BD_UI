@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../AuthContext";
 //css
 import './signin.css';
 
@@ -39,7 +40,8 @@ class Signin extends React.Component {
 
             if (response.status === 200) {
                 this.setState({ message: 'Usuario creado con éxito' });
-                this.props.history.push('/login');
+                this.context.login(); // Set authentication state to true
+                this.props.history.push('/pages');
             } else {
                 this.setState({ message: 'Error al crear el usuario' });
             }
@@ -111,5 +113,7 @@ class Signin extends React.Component {
         );
     }
 }
+
+Signin.contextType = AuthContext;
 
 export default Signin;
